@@ -1,0 +1,35 @@
+{
+  "name": "club",
+  "version": "1.0.0",
+  "description": "This is a book club demo.",
+  "main": "backend/start.js",
+  "scripts": {
+    "start": "supervisor -w ./ -e js -x node helloWorld/index"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/TonyChen8/BookClub.git"
+  },
+  "keywords": [
+    "angular",
+    "express",
+    "nodejs",
+    "mongo"
+  ],
+  "author": "Tony.Chen",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/TonyChen8/BookClub/issues"
+  },
+  "homepage": "https://github.com/TonyChen8/BookClub#readme",
+  "devDependencies": {
+    "express": "^4.14.0",
+    "mongoose": "^4.5.10",
+    "winston": "^2.2.0"
+  },
+  "dependencies": {
+    "express": "^4.14.0",
+    "mongoose": "^4.5.10",
+    "winston": "^2.2.0"
+  }
+}
