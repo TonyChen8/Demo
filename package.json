@@ -2,9 +2,12 @@
   "name": "club",
   "version": "1.0.0",
   "description": "This is a book club demo.",
-  "main": "backend/start.js",
+
   "scripts": {
-    "start": "supervisor -w ./ -e js -x node helloWorld/index"
+    "start": "http-server -a 192.168.2.123 -p 80 -c-1 ./frontend",
+
+    "pretest":"start http-server -a 192.168.2.123 -p 80 -c-1 ./frontend",
+    "test": "start karma start frontend/karma.conf.js"
   },
   "repository": {
     "type": "git",
@@ -24,6 +27,7 @@
   "homepage": "https://github.com/TonyChen8/BookClub#readme",
   "devDependencies": {
     "express": "^4.14.0",
+    "http-server": "^0.9.0",
     "mongoose": "^4.5.10",
     "winston": "^2.2.0"
   },

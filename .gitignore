@@ -1,7 +1,8 @@
-.idea
+﻿.idea
 start.cmd
 资料
 *.lnk
 node_modules
 db
 *.log
+bower_components

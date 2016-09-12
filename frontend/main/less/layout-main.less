@@ -1,0 +1,28 @@
+@import 'color.less';
+@import 'positions.less';
+@import "utils.less";
+
+html, body {
+  margin: 0;
+  min-height: 400px;
+  height: 100% !important;
+  height: 400px;
+}
+
+//main layout
+.layout-main-content {
+  height: 100%;
+  .layout-header {
+    height: @header-height;
+    background-color: @color-headbar-background;
+  }
+  > .layout-main-view {
+    position: absolute;
+    top: @header-height;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    overflow-x: auto;
+    overflow-y: hidden;
+  }
+}

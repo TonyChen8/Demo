@@ -1,0 +1,26 @@
+@import 'color';
+@import "positions";
+@import "utils";
+
+//header's font
+.my-font {
+  font-size: 1.7em;
+  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+  color: rgba(0, 0, 0, 0.64);
+}
+
+.menu-item-underline-style {
+  > li {
+    > a {
+      color: @color-font-black;
+      border-bottom: @menu-item-decorator-width solid @color-background-transparent;
+      &:hover, &:focus {
+        color:@color-font-purple;
+        border-radius: 0px;
+        border-bottom: @menu-item-decorator-width solid @color-menu-focus-bar;
+        background-color: @color-menu-item;
+        transition: border-bottom .3s;
+      }
+    }
+  }
+}

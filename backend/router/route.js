@@ -23,13 +23,20 @@ var sendJsonResponse = function (response, status, content) {
 var app = express();
 app.set('port', process.env.PORT || 80);
 
+//allow CROS
+app.all('/', function(req, res, next) {
+    res.header("Access-Control-Allow-Origin", "*");
+    res.header("Access-Control-Allow-Headers", "X-Requested-With");
+    next();
+});
+
 //set router
 app.route('/')
     .get(function (req, res) {
-        res.send('Welcome to home page!');
+        res.send({message:'Welcome to home page!'});
     })
     .post(function (req, res) {
-        res.send('This is home page!');
+        res.send({message:'This is home page!'});
     });
 
 //get json data from mongodb
