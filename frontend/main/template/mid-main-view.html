@@ -1,8 +1,32 @@
-<div>
-	<row class="work-zone">
-		<div class="col-md-3 col-sm-4">messages</div>
-		<div class="col-md-3 col-sm-4">today</div>
-		<div class="col-md-3 col-sm-4">tomorrow</div>
-		<div class="col-md-3 col-sm-4">todo</div>
-	</row>
+<div class="full-height">
+	<div class="row work-zone " ng-controller="cmDraglistController as dlc">
+		<div class="col-sm-3 col-md-3" ng-repeat="list in dlc.lists">
+			<div class="dropZone clearfix" >
+				<!--header-->
+				<div class="large-height clearfix">
+					<div class="col-sm-6 pull-left text-left">
+						{{list.message}}
+					</div>
+					<div class="col-sm-5 pull-right text-right" ng-if="list.items.length > 0">
+						<span class="badge">{{list.items.length}}</span>
+					</div>
+				</div>
+				<!--tasks-->
+				<div class="col-sm-12 limit-height">
+					<div class="list-group" cm-draglist="" id="1" >
+						<div class="list-group-item" ng-repeat="item in list.items">{{item.task}}</div>
+					</div>
+				</div>
+				<!--create button-->
+				<div class="col-sm-12 text-left large-height">
+					<a href="#" cm-ico-btn="plusSign">
+						create new task
+					</a>
+				</div>
+			</div>
+		</div>
+	</div>
 </div>
+
+
+

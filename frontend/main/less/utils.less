@@ -2,11 +2,11 @@
 @import 'positions.less';
 
 .shadow {
-  text-shadow: 5px 5px 5px @color-box-shadow;
+  text-shadow: 5px 5px 5px @color-shadow-box;
 }
 
 [class*=col-] {
-  .bordered;
+  //.bordered;
 }
 
 .full-height {
@@ -35,4 +35,18 @@
 .bordered {
   border: solid 1px black;
   border-radius: @border-radius-small;
+}
+
+.no-padding {
+  @media screen and (min-width: 768px) {
+    padding: 0;
+  }
+}
+
+.normal-margin{
+  margin: 0 5px;
+}
+
+.large-height {
+  line-height: 3em;
 }

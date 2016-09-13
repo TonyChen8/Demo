@@ -1,20 +1,39 @@
-<div class="container ">
+<div class=" ">
 	<div class="row my-font">
-		<div class="col-sm-1">
+		<div class="col-sm-1 pull-left">
 			<span class="{{badges.curBadge.badge}} shadow"></span>
 		</div>
-		<div class="col-sm-11">
+		<div class="col-sm-11 pull-left">
 			<span ng-bind="badges.curBadge.name"></span>
 		</div>
 	</div>
-	<div class="row ">
-		<div class="col-sm-11 col-sm-offset-1">
+	<div class="row no-padding">
+		<div class="col-sm-12">
 			<ul class="nav nav-pills menu-item-underline-style">
 				<li><a href="#">My tasks</a></li>
 				<li><a href="#">My routine</a></li>
 				<li><a href="#">My status</a></li>
 				<li><a href="#">My messages</a></li>
+				<!--sort dropdown-->
+				<li class="pull-right">
+					<div class="input-group">
+						<a class="input-group-addon width-auto" cm-ico-btn="sort"></a>
+						<span uib-dropdown class="pull-right form-control">
+						<a href uib-dropdown-toggle>Sort by <span class="caret"></span></a>
+							<ul class="dropdown-menu" uib-dropdown-menu aria-labelledby="simple-dropdown">
+								<li role="menuitem"><a href="" cm-ico-btn="thLarge">Priority</a></li>
+								<li role="menuitem"><a href="" cm-ico-btn="deadline">Deadline</a></li>
+								<li role="menuitem"><a href="" cm-ico-btn="thList">Finish time</a></li>
+								<li role="menuitem"><a href="" cm-ico-btn="time">Update time</a></li>
+								<li role="menuitem"><a href="" cm-ico-btn="author">Author</a></li>
+								<li class="divider"></li>
+								<li role="menuitem"><a href="" cm-ico-btn="no">Dont sort</a></li>
+							</ul>
+						</span>
+					</div>
+				</li>
 			</ul>
 		</div>
 	</div>
 </div>
+

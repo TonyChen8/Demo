@@ -379,16 +379,16 @@
 	/ / last-child这样的伪类定义的是在其父元素中是否是最后一个，而不是在所有搜索结果中的最后一个。 > 第一个儿子， + 紧邻的兄弟， ~ 所有兄弟，“ ”所有儿子 background-color: red;
 	}
 
-	.cm[out=ee] {
+	li+li {
 		background-color: blue;
 	}
 
 	.cm > li {
-		background-color: yellow;
+		/*background-color: yellow;*/
 	}
 
 	.div > p {
-		background-color: yellow;
+		/*background-color: yellow;*/
 	}
 </style>
 

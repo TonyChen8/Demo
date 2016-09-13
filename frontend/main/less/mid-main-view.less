@@ -1,0 +1,32 @@
+@import 'color.less';
+@import 'positions.less';
+@import 'utils';
+
+.work-zone {
+  padding: 15px;
+  > div {
+    > div {
+      border-radius: 5px;
+      background-color: @color-background-workzone-base;
+      color: @color-font-black;
+    }
+  }
+  .dropZone {
+    margin-bottom: 10px;
+    background-color: @color-background-draglist-base;
+    color: @color-font-drop-list;
+    > div a {
+      text-decoration: none;
+      color: @color-font-drop-list;
+    }
+    .list-group > .list-group-item {
+      margin-bottom: 5px;
+    }
+  }
+}
+
+.limit-height {
+  max-height: 400px;
+  overflow-x: hidden;
+  overflow-y: auto;
+}
