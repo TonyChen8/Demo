@@ -1,7 +1,7 @@
 <div class="full-height">
-	<div class="row work-zone " ng-controller="cmDraglistController as dlc">
+	<div class="row work-zone " ng-controller="cmDragDroplistController as dlc">
 		<div class="col-sm-3 col-md-3" ng-repeat="list in dlc.lists">
-			<div class="dropZone clearfix" >
+			<div class="dropZone clearfix">
 				<!--header-->
 				<div class="large-height clearfix">
 					<div class="col-sm-6 pull-left text-left">
@@ -12,16 +12,20 @@
 					</div>
 				</div>
 				<!--tasks-->
-				<div class="col-sm-12 limit-height">
-					<div class="list-group" cm-draglist="" id="1" >
-						<div class="list-group-item" ng-repeat="item in list.items">{{item.task}}</div>
+				<div class="col-sm-12">
+					<div class="list-group padding-top-bottom-1px limit-height" cm-droplist="" id="{{$index}}">
+						<div ng-if="list.items.length == 0">Drag and drop your item here.</div>
+						<div class="list-group-item cm-droplist-elem"
+						     ng-class="{'insert-here':item.insertHere, 'insert-after':item.insertAfter,'hide':item.hide}"
+						     cm-drag-item id="{{$index}}"
+						     ng-repeat="item in list.items">
+							{{item.task | checkmark}}
+						</div>
 					</div>
 				</div>
 				<!--create button-->
 				<div class="col-sm-12 text-left large-height">
-					<a href="#" cm-ico-btn="plusSign">
-						create new task
-					</a>
+					<a href="#" cm-ico-btn="plusSign">create new task</a>
 				</div>
 			</div>
 		</div>

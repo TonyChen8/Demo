@@ -21,7 +21,6 @@ describe("A badgeService", function () {
                 badge = badgesService.getNext();
             }
 
-            expect(badgesService.getBadgeCount()).toEqual(1);
             badgesService.setBadge([{name:2, badge: "test2"},{name: "3", badge: "test3"},{name: 4, badge: "test4"}]);
             expect(badgesService.getBadgeCount()-count).toEqual(4);
         }])

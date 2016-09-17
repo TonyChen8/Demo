@@ -19,8 +19,21 @@
       text-decoration: none;
       color: @color-font-drop-list;
     }
-    .list-group > .list-group-item {
+    .list-group > .list-group-item:not(:last-child) {
       margin-bottom: 5px;
+    }
+    .list-group-item.cm-hide{
+      //margin-top: @height-height-insert-item;
+      //.no-padding;
+      //height: 0px;
+    }
+    .insert-here {
+      margin-top: @height-height-insert-item;
+      //.cm-transition(margin-top  0.3s); //this will break drop items position calculation
+    }
+    .insert-after {
+      margin-bottom: 50px;
+      //.cm-transition(margin-top  0.3s); //this will break drop items position calculation
     }
   }
 }

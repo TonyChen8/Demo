@@ -1,5 +1,6 @@
 @import 'color.less';
 @import 'positions.less';
+@import "utils.less";
 
 .max-width (@width) {
   max-width: @width;
@@ -31,13 +32,13 @@
         border-left: @menu-item-decorator-width solid rgba(255, 0, 0, 0);
         &:focus, &:hover {
           opacity: 1;
-          transition: opacity .3s;
+          .cm-transition (opacity .3s);
         }
       }
       a.active, a:focus {
         opacity: 1;
         border-left: @menu-item-decorator-width solid @color-menu-focus-bar;
-        transition: border-left .3s, opacity .3s;
+        .cm-transition("opacity 0.3s, border-left 0.3s");
       }
     }
   }

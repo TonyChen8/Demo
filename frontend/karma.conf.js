@@ -13,6 +13,9 @@ module.exports = function (config) {
             'bower_components/angular-ui-router/release/angular-ui-router.js',
             'bower_components/jasmine-core/lib/jasmine-core/jasmine.js',
 
+            'js/badgesService/badgesModule.js',
+            '**/*/listModule.js',
+            '**/*/icoBtnModule.js',
             '!(bower_components)/**/*!(.module|.spec).js',
             '**/*_spec.js'
 

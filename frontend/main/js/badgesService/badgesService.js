@@ -8,6 +8,14 @@ angular.module('cmBadgeFactory')
         badges['dashboard'] = {name:'Dashboard', badge: "glyphicon glyphicon-th"};
         badges['plusSign'] = {name: 'plusSign', badge: "glyphicon glyphicon-plus-sign"};
         badges['message'] = {name: 'message', badge: "glyphicon glyphicon-envelope"};
+        badges['sort'] = {name: 'message', badge: "glyphicon glyphicon-sort-by-attributes-alt"};
+        badges['thLarge'] = {name: 'message', badge: "glyphicon glyphicon-th-large"};
+        badges['thList'] = {name: 'message', badge: "glyphicon glyphicon-th-list"};
+        badges['deadline'] = {name: 'message', badge: "glyphicon glyphicon-saved"};
+        badges['time'] = {name: 'message', badge: "glyphicon glyphicon-time"};
+        badges['author'] = {name: 'message', badge: "glyphicon glyphicon-user"};
+        badges['no'] = {name: 'message', badge: "glyphicon glyphicon-ban-circle"};
+
 
         function log() {
             if (badges.length) {
@@ -119,6 +127,7 @@ angular.module('cmBadgeFactory')
                      */
                     getFirstBadge: function () {
                         this.resetIterator();
+                        //tmpIndex = badges.keys();
                         var index = 0;
                         for (var obj in badges) {
                             tmpIndex[index++] = obj;

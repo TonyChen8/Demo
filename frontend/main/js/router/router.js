@@ -1,7 +1,7 @@
 /**
  * Created by cm on 2016/9/9.
  */
-angular.module('router',[])
+angular.module('router',["cmBadgeFactory"])
     .config(["$stateProvider", "$urlRouterProvider", function ($stateProvider, $urlRouterProvider) {
         $urlRouterProvider.when("", "/start");
 
@@ -12,7 +12,7 @@ angular.module('router',[])
                 views: {
                     "header": {
                         templateUrl: "template/top-header.html",
-                        controller: "badgesController as badges"
+                        controller: "cmBadgesController as badges"
                     },
                     "menu-sidebar": {
                         templateUrl: "template/left-menu-bar.html"
