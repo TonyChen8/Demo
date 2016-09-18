@@ -4,7 +4,7 @@
  */
 
 describe("A badgeService", function () {
-    beforeEach(module('cmBadgeFactory'));
+    beforeEach(module('cmBadgeModule'));
     //beforeEach(module('badgesService', function ($provide) {
     //    // Output messages
     //    $provide.value('$log', console);
@@ -26,5 +26,4 @@ describe("A badgeService", function () {
         }])
     })
 })
-;
 

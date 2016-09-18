@@ -1,4 +1,4 @@
-angular.module('cmBadgeFactory')
+angular.module('cmBadgeModule')
     .provider("cmBadgesService", function () {
         var self = this;
         var badges = [];
