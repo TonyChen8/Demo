@@ -22,11 +22,6 @@
     .list-group > .list-group-item:not(:last-child) {
       margin-bottom: 5px;
     }
-    .list-group-item.cm-hide{
-      //margin-top: @height-height-insert-item;
-      //.no-padding;
-      //height: 0px;
-    }
     .insert-here {
       margin-top: @height-height-insert-item;
       //.cm-transition(margin-top  0.3s); //this will break drop items position calculation
@@ -38,8 +33,29 @@
   }
 }
 
+//on dragover event, chrome shows a blank dragging picture if element's position is relative.
+.fix-chrome-issue{
+  position: initial;
+}
+
+[cm-drag-item] {
+  [class*=col-] {
+    .fix-chrome-issue;
+  }
+}
+
+
+
 .limit-height {
   max-height: 400px;
   overflow-x: hidden;
   overflow-y: auto;
+}
+
+.font-red {
+  color: @color-font-red;
+}
+
+.font-black {
+  color: @color-font-black;
 }

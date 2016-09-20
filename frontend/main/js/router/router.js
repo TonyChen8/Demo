@@ -1,7 +1,7 @@
 /**
  * Created by cm on 2016/9/9.
  */
-angular.module('router',["cmBadgeFactory"])
+angular.module('router', ["cmBadgeModule"])
     .config(["$stateProvider", "$urlRouterProvider", function ($stateProvider, $urlRouterProvider) {
         $urlRouterProvider.when("", "/start");
 
@@ -10,11 +10,14 @@ angular.module('router',["cmBadgeFactory"])
                 abstract: true,
                 url: "",
                 views: {
-                    "header": {
+                    "": {
+                        templateUrl: "template/base-template.html",
+                    },
+                    "header@root": {
                         templateUrl: "template/top-header.html",
                         controller: "cmBadgesController as badges"
                     },
-                    "menu-sidebar": {
+                    "menu-sidebar@root": {
                         templateUrl: "template/left-menu-bar.html"
                     }
                 }
@@ -22,12 +25,14 @@ angular.module('router',["cmBadgeFactory"])
             .state("root.start", {
                 url: "/start",
                 views: {
-                    "main-view@": {
-                        templateUrl: "template/mid-main-view.html",
+                    "main-view@root": {
+                        templateUrl: "template/mid-main-view.html"
                     }
                 }
             })
+            .state("signup", {
+                url: "/signup/:login",
+                templateUrl: "template/login.html",
+                //controller: "signupController as SC"
+            })
     }])
-    .controller("formController", ['$scope', function (scope) {
-        scope.test = 'test';
-    }]);

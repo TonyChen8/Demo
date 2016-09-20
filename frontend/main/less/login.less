@@ -23,7 +23,7 @@
 .single-panel {
   background-color: @color-background-login;
   padding: 2%;
-  .row {
+  div[class~=row] {
     margin: @margin-login-row 0;
     .form-wrapper {
       .form-group {
@@ -40,4 +40,9 @@
   }
 }
 
+.cm-adjust.row{
+  @media (max-width: 768px){
+    margin-left: 100%/3;
+  }
+}
 

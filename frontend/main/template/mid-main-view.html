@@ -4,28 +4,50 @@
 			<div class="dropZone clearfix">
 				<!--header-->
 				<div class="large-height clearfix">
-					<div class="col-sm-6 pull-left text-left">
+					<div class="col-sm-6 pull-left text-left font-black">
 						{{list.message}}
 					</div>
 					<div class="col-sm-5 pull-right text-right" ng-if="list.items.length > 0">
 						<span class="badge">{{list.items.length}}</span>
 					</div>
 				</div>
-				<!--tasks-->
-				<div class="col-sm-12">
-					<div class="list-group padding-top-bottom-1px limit-height" cm-droplist="" id="{{$index}}">
+				<!--tasks item-->
+				<div class="col-sm-12 font-black">
+					<div class="list-group padding-top-bottom-1px limit-height" cm-droplist="">
 						<div ng-if="list.items.length == 0">Drag and drop your item here.</div>
+						<!--item body-->
 						<div class="list-group-item cm-droplist-elem"
-						     ng-class="{'insert-here':item.insertHere, 'insert-after':item.insertAfter,'hide':item.hide}"
-						     cm-drag-item id="{{$index}}"
+						     ng-class="{'insert-here':item.insertBefore, 'insert-after':item.insertAfter,'hide':item.hide}"
+						     cm-drag-item="cm" ng-click="dl.clickItem()"
 						     ng-repeat="item in list.items">
-							{{item.task | checkmark}}
+							<div class="row">
+								<div class="col-sm-11 col-md-11">
+									<input type="checkbox"></input>
+									{{item.task | checkmark}}
+								</div>
+							</div>
+							<div class=" row small">
+								<div class="col-sm-11 col-md-11">
+									<span cm-ico-btn="time"
+									      class="margin-normal"
+									      ng-class="{'font-red':item.timeout}"
+									      ng-if="item.deadline">
+										{{item.deadline | date:"MM-dd-yy"}}
+									</span>
+									<span cm-ico-btn="author"
+									      class="margin-normal"
+									      ng-if="item.user">
+										{{item.user}}
+									</span>
+									{{item.userBadge}}
+								</div>
+							</div>
 						</div>
 					</div>
 				</div>
 				<!--create button-->
-				<div class="col-sm-12 text-left large-height">
-					<a href="#" cm-ico-btn="plusSign">create new task</a>
+				<div class="col-sm-12 text-left large-height" >
+					<a href cm-ico-btn="plusSign" ng-click="">create new task</a>
 				</div>
 			</div>
 		</div>
