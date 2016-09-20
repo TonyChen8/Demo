@@ -1,0 +1,18 @@
+<!--left side menu-->
+<div class="col-sm-1 layout-sidebar">
+	<span class="glyphicon glyphicon-user"></span>
+	<div ui-view="menu-sidebar"></div>
+</div>
+<!--right parts-->
+<div class="col-sm-11 layout-main-content">
+	<!--header-->
+	<div class="row layout-header">
+		<div class="col-sm-12">
+			<div class="full-height" ui-view="header"></div>
+		</div>
+	</div>
+	<!--working area-->
+	<div class="layout-main-view">
+		<div class="" ui-view="main-view"></div>
+	</div>
+</div>

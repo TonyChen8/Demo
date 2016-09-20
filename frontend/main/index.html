@@ -10,28 +10,12 @@
 	<link rel="stylesheet/less" href="less/left-menu-bar.less">
 	<link rel="stylesheet/less" href="less/top-header.less">
 	<link rel="stylesheet/less" href="less/mid-main-view.less" >
+	<link rel="stylesheet/less" href="less/login.less" >
 </head>
 <body ng-app="workShop">
 
-<div class="container full-screen">
-	<!--left side menu-->
-	<div class="col-sm-1 layout-sidebar">
-		<span class="glyphicon glyphicon-user"></span>
-		<div ui-view="menu-sidebar"></div>
-	</div>
-	<!--right parts-->
-	<div class="col-sm-11 layout-main-content">
-		<!--header-->
-		<div class="row layout-header">
-			<div class="col-sm-12">
-				<div class="full-height" ui-view="header"></div>
-			</div>
-		</div>
-		<!--working area-->
-		<div class="layout-main-view">
-			<div class="" ui-view="main-view"></div>
-		</div>
-	</div>
+<div class="container full-screen"  ui-view>
+	ng-controller="cmAuthController"
 </div>
 
 <!--[if lt IE 9]>
@@ -49,6 +33,10 @@
 <script src="js/badgesService/badgesModule.js"></script>
 <script src="js/badgesService/badgesController.js"></script>
 <script src="js/badgesService/badgesService.js"></script>
+<script src="js/signupController/signupController.js"></script>
+<script src="js/signupController/compareDirective/compareDirective.js"></script>
+
+<script src="js/disableLinkDirective/disableLinkDirective.js"></script>
 
 <script src="js/draglistDirective/listModule.js"></script>
 <script src="js/draglistDirective/listController.js"></script>
@@ -58,6 +46,12 @@
 
 <script src="js/icoButtonDirective/icoBtnModule.js"></script>
 <script src="js/icoButtonDirective/icoBtnDirective.js"></script>
+
+<script src="js/authService/authModule.js"></script>
+<script src="js/authService/authService.js"></script>
+<script src="js/authService/authController.js"></script>
+
+
 
 </body>
 </html>

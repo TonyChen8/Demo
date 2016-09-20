@@ -1,0 +1,136 @@
+<div class="single-panel" ng-controller="signupController as SC">
+	<div class="row">
+		<div class="col-sm-8 col-sm-offset-2">
+			<div class="login-header text-center">
+				<h2>Welcome to my workshop</h2>
+			</div>
+		</div>
+	</div>
+	<!-- login and register links-->
+	<div class="row cm-adjust">
+		<div class="col-sm-8 col-md-6 col-sm-offset-2 col-md-offset-3 ">
+			<div class="margin-normal-vertical">
+				<div class="col-sm-3 col-md-2 col-sm-offset-3 col-md-offset-4 text-center pull-left">
+					<span ng-if="SC.login === true" class="inactive">Login</span>
+					<a href="" ng-if="SC.login===false" ng-click="SC.login = !SC.login">Login</a>
+				</div>
+				<span class="divider"></span>
+				<div class="col-sm-3 col-md-2 text-center pull-left">
+					<span ng-if="SC.login == false" class="inactive">Rigster</span>
+					<a href="" ng-if="SC.login === true" ng-click="SC.login = !SC.login">Rigster</a>
+				</div>
+			</div>
+		</div>
+	</div>
+	<!-- register form -->
+	<div class="row"  ng-show="SC.login === false">
+		<div class="col-sm-6 col-md-4 col-sm-offset-3 col-md-offset-4">
+			<div class="form-wrapper">
+				<form ng-submit="SC.submitForm()" name="registerForm">
+					<div class="form-group text-center">
+						<!--<pre style="white-space: pre-wrap;">{{registerForm}}</pre>-->
+						<input type="text" name="username"
+						       class="form-control"
+						       placeholder="Input user name"
+						       ng-model="SC.username"
+						       ng-minlength="4"
+						       ng-maxlength="20"
+						       required>
+						<p class="text-danger text-left"
+						   ng-if="registerForm.username.$error.required && registerForm.username.$touched">
+							Please input username.
+						</p>
+						<p class="text-danger text-left" ng-if="(registerForm.username.$error.minlength ||
+									registerForm.username.$error.maxlength) && registerForm.username.$touched">
+							The length of username is between 4 and 20.
+						</p>
+
+						<input type="password"
+						       name="password"
+						       class="form-control"
+						       placeholder="Input password"
+						       ng-model="SC.password"
+						       ng-minlength="6"
+						       ng-maxlength="32"
+						       required>
+						<p class="text-danger text-left"
+						   ng-if="registerForm.password.$touched && registerForm.password.$error.required">
+							Please input password.
+						</p>
+						<p class="text-danger text-left"
+						   ng-if="registerForm.password.$touched &&
+						   (registerForm.password.$error.minlength ||registerForm.password.$error.maxlength)">
+							The length of username is between 6 and 32.
+						</p>
+
+						<input type="password"
+						       name="passwordConfirm"
+						       class="form-control"
+						       placeholder="Confirm your password"
+						       ng-model="SC.passwordConfirm"
+						       ng-minlength="4"
+						       ng-maxlength="20"
+						       cm-compare="SC.password"
+						       required>
+						<p class="text-danger text-left"
+						   ng-if="registerForm.passwordConfirm.$touched && registerForm.passwordConfirm.$error.required">
+							Please confirm password.
+						</p>
+						<p class="text-danger text-left"
+						   ng-if="registerForm.passwordConfirm.$touched && registerForm.passwordConfirm.$error.compare">
+							The password is not the same.
+						</p>
+
+						<button class="btn btn-success form-control text-center">Register</button>
+					</div>
+				</form>
+			</div>
+		</div>
+	</div>
+
+	<!-- login form -->
+	<div class="row" ng-show="SC.login === true">
+		<div class="col-sm-6 col-md-4 col-sm-offset-3 col-md-offset-4">
+			<div class="form-wrapper">
+				<form ng-submit="SC.submitForm()" name="loginForm">
+					<div class="form-group text-center">
+						<input type="text" name="username"
+						       class="form-control"
+						       placeholder="Input user name"
+						       ng-model="SC.username"
+						       ng-minlength="4"
+						       ng-maxlength="20"
+						       required>
+						<p class="text-danger text-left"
+						   ng-if="loginForm.username.$error.required && loginForm.username.$touched">
+							Please input username.
+						</p>
+						<p class="text-danger text-left" ng-if="(loginForm.username.$error.minlength ||
+									loginForm.username.$error.maxlength) && loginForm.username.$touched">
+							The length of username is between 4 and 20.
+						</p>
+
+						<input type="password"
+						       name="password"
+						       class="form-control"
+						       placeholder="Input password"
+						       ng-model="SC.password"
+						       ng-minlength="6"
+						       ng-maxlength="32"
+						       required>
+						<p class="text-danger text-left"
+						   ng-if="loginForm.password.$touched && loginForm.password.$error.required">
+							Please input password.
+						</p>
+						<p class="text-danger text-left"
+						   ng-if="loginForm.password.$touched &&
+						   (loginForm.password.$error.minlength ||loginForm.password.$error.maxlength)">
+							The length of username is between 6 and 32.
+						</p>
+						<button class="btn btn-success form-control text-center">Login</button>
+					</div>
+				</form>
+			</div>
+		</div>
+	</div>
+</div>

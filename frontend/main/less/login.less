@@ -1,0 +1,43 @@
+@import 'color.less';
+@import 'positions.less';
+@import 'utils';
+
+.login-header {
+  border-bottom: @menu-item-decorator-width solid rgb(111, 111, 111);
+}
+
+.divider {
+  float: left;
+  &::after {
+    content: "|";
+    overflow: hidden;
+    color: @color-background-divider;
+  }
+}
+
+.inactive {
+  text-decoration: none;
+  color: @color-background-divider;
+}
+
+.single-panel {
+  background-color: @color-background-login;
+  padding: 2%;
+  .row {
+    margin: @margin-login-row 0;
+    .form-wrapper {
+      .form-group {
+        .form-control {
+          height: 3em;
+          margin: @margin-login-row 0;
+        }
+        p {
+          height: 3em;
+          margin: -@margin-login-row 0 0 0;
+        }
+      }
+    }
+  }
+}
+
+
